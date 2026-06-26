@@ -1,0 +1,80 @@
+<?php
+/**
+ * Footer template
+ * @package opn-theme
+ */
+?>
+</div><!-- #content -->
+
+<footer class="footer" role="contentinfo">
+    <div class="footer-grid">
+        <div class="footer-col">
+            <h4><?php echo esc_html( get_bloginfo( 'name' ) ); ?></h4>
+            <p><?php echo esc_html( get_bloginfo( 'description' ) ); ?></p>
+        </div>
+        <div class="footer-col">
+            <h4>Quick Links</h4>
+            <ul>
+                <li><a href="<?php echo esc_url( home_url( '/' ) ); ?>">Home</a></li>
+                <li><a href="<?php echo esc_url( home_url( '/how-it-works/' ) ); ?>">How It Works</a></li>
+                <li><a href="<?php echo esc_url( home_url( '/online-readings/' ) ); ?>">Online Readings</a></li>
+                <li><a href="<?php echo esc_url( home_url( '/blog/' ) ); ?>">Blog</a></li>
+                <li><a href="<?php echo esc_url( home_url( '/about/' ) ); ?>">About Us</a></li>
+                <li><a href="<?php echo esc_url( home_url( '/faq/' ) ); ?>">FAQ</a></li>
+                <li><a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>">Contact Us</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4>Services</h4>
+            <ul>
+                <li><a href="<?php echo esc_url( home_url( '/love-relationships/' ) ); ?>">Love &amp; Relationships</a></li>
+                <li><a href="<?php echo esc_url( home_url( '/career-finance/' ) ); ?>">Career &amp; Finance</a></li>
+                <li><a href="<?php echo esc_url( home_url( '/spiritual-guidance/' ) ); ?>">Spiritual Guidance</a></li>
+                <li><a href="<?php echo esc_url( home_url( '/tarot-readings/' ) ); ?>">Tarot Readings</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4>Legal</h4>
+            <ul>
+                <li><a href="<?php echo esc_url( home_url( '/privacy-policy/' ) ); ?>">Privacy Policy</a></li>
+                <li><a href="<?php echo esc_url( home_url( '/terms/' ) ); ?>">Terms of Service</a></li>
+                <li><a href="<?php echo esc_url( home_url( '/disclaimer/' ) ); ?>">Disclaimer</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; <?php echo date("Y"); ?> <?php echo esc_html( get_bloginfo( 'name' ) ); ?>. <?php esc_html_e( 'All rights reserved.', 'opn-theme' ); ?></p>
+        <p class="disclaimer"><?php esc_html_e( 'For entertainment purposes only. Not a substitute for professional advice.', 'opn-theme' ); ?></p>
+    </div>
+
+    <a href="#" class="back-to-top" id="opn-back-to-top" aria-label="<?php esc_attr_e( 'Back to top', 'opn-theme' ); ?>">&uarr;</a>
+</footer>
+
+<script>
+(function() {
+    // Mobile nav toggle
+    var toggle = document.getElementById('opn-nav-toggle');
+    var links = document.getElementById('opn-nav-links');
+    if (toggle && links) {
+        toggle.addEventListener('click', function() {
+            links.classList.toggle('active');
+            toggle.classList.toggle('active');
+        });
+    }
+    // Back to top
+    var btn = document.getElementById('opn-back-to-top');
+    if (btn) {
+        window.addEventListener('scroll', function() {
+            btn.style.display = window.scrollY > 400 ? 'block' : 'none';
+        });
+        btn.addEventListener('click', function(e) {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    }
+})();
+</script>
+
+<?php wp_footer(); ?>
+</body>
+</html>
